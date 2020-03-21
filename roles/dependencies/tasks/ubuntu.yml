@@ -20,7 +20,7 @@
     - unzip
     - vim
     - nano
-    - emacs24-nox
+    - emacs25-nox
     - htop
     - apt-transport-https
     - ca-certificates
