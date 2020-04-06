@@ -1,4 +1,4 @@
-# Ansible Deloy Script for ISLE
+# Ansible Deploy Script for ISLE
 
 This is a starter deploy script for ISLE Host servers. This will not work out of the box and requires modifications for deploy to either remote servers or a local vagrant / VM.
 
