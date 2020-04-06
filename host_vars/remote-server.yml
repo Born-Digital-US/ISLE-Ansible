@@ -6,9 +6,8 @@
 ###
 
 ansible_connection: ssh
-ansible_ssh_host:   10.10.10.130 # edit here for IP address of ISLE Host Server
-ansible_ssh_user:   vagrant # edit here for deploy user
-
+ansible_ssh_host:    # edit here for IP address of ISLE Host Server or local VM e.g. 192.168.1.100
+ansible_ssh_user:   # edit here for deploy user e.g. vagrant
 user_name: islandora
 pub_locale: ~/Users/enduser/.ssh/id_rsa.pub # edit here for local enduser id_rsa.pub path
 user_password:  islandora
@@ -29,19 +28,24 @@ docker_user: islandora
 
 ### Docker-Compose
 
-docker_compose_version: "1.19.0"
+docker_compose_version: "1.25.4"
 docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
 docker_compose_path: /usr/local/bin/docker-compose
 
 ### ISLE Images
+# Commented out images are optional
 
-isle_docker_image_mysql: islandoracollabgroup/isle-mysql:{{ isle_docker_image_tag }}
-isle_docker_image_fedora: islandoracollabgroup/isle-fedora:{{ isle_docker_image_tag }}
-isle_docker_image_solr: islandoracollabgroup/isle-solr:{{ isle_docker_image_tag }}
-isle_docker_image_apache: islandoracollabgroup/isle-apache:{{ isle_docker_image_tag }}
-isle_docker_image_proxy: islandoracollabgroup/isle-proxy:{{ isle_docker_image_tag }}
+isle_image_repos:
+  - isle-apache
+  - isle-mysql
+  - isle-tomcat
+  - isle-solr
+  - isle-imageservices
+  - isle-fedora
+  #- isle-varnish
+  #- isle-blazegraph
 
-isle_docker_image_tag: latest
+isle_docker_image_tag: 1.4.2
 
 
 ### For Debian / Ubuntu Hosts

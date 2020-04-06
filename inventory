@@ -1,11 +1,12 @@
 # Please fill in / edit the following
-# 1. Change isle-prod-project.institution value below to correct hostname. Please note ansible > host_vars > isle-prod-project.institution.yml will need to match this new name
-# 2. Change the bracketed [isle-prod-project.institution] below to the correct hostname as well.
+# 1. Copy one of the samples below and modify
+# 2. Change the local_vm or remote-server value below to correct hostname. Please note ansible > host_vars > yourhostname.yml will need to match this new name
+# 2. Change the bracketed [value] below to the correct hostname as well.
 # 4. Add the correct Ansible deploy user account to the end of ansible_ssh_user=
-# 5. Add the correct path to the Ansible deploy user's id_rsa.pub file after the ansible_ssh_private_key_file=
+# 5. Add the correct path to the Ansible deploy user's id_rsa.pub file after the ansible_ssh_private_key_file= this can also be a vagrant key.
 
-[isle-prod-project.institution]
-isle-prod-project.institution ansible_connection=ssh ansible_ssh_user= ansible_ssh_private_key_file=
-
-[host_local_macos_isle_localdomain]
-host_local_macos_isle_localdomain ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_private_key_file=
+# Samples
+# [local_vm]
+# local_vm ansible_connection=ssh ansible_ssh_user= ansible_ssh_private_key_file=
+# [remote-server]
+# remote-server ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_private_key_file=
